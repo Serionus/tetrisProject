@@ -22,25 +22,10 @@
 
 #include "lcd.h"
 #include "key.h"
-#include "uart.h"
-#include "exampleGame.h"
-#include "snake.h"
-#include "pong.h"
-#include "bt.h"
 #include "hw.h"
 #include "version.h"
 #include "configAppl.h"
 #include "startupDisplay.h"
-
-#ifdef INCLUDE_MENU_FIRE
-#include "fire_0_100x40c.h"
-#include "fire_1_100x40c.h"
-#include "fire_2_100x40c.h"
-#include "fire_3_100x40c.h"
-#include "fire_4_100x40c.h"
-#include "fire_5_100x40c.h"
-#include "fire_6_100x40c.h"
-#endif
 
 /******************************************************************************
  * Typedefs and defines
@@ -112,7 +97,7 @@ drawMenuCursor(tU8 cursor)
 {
   tU32 row;
 
-  for(row=0; row<4; row++)
+  for(row=0; row<1; row++)
   {
     lcdGotoxy(18,20+(14*row));
     if(row == cursor)
@@ -122,10 +107,7 @@ drawMenuCursor(tU8 cursor)
     
     switch(row)
     {
-      case 0: lcdPuts("Play Example"); break;
-      case 1: lcdPuts("Play Snake"); break;
-      case 2: lcdPuts("Play P-Pong"); break;
-      case 3: lcdPuts("Bluetooth"); break;
+      case 0: lcdPuts("Tetris"); break;
       default: break;
     }
   }
@@ -192,10 +174,6 @@ proc1(void* arg)
   resetLCD();
   lcdInit();
 
-#ifdef INCLUDE_STARTUP_SEQUENCE
-  displayStartupSequence();
-#endif
-
   //print menu
   drawMenu();
   
@@ -213,36 +191,12 @@ proc1(void* arg)
         switch(cursor)
         {
           case 0: playExample(); break;
-          case 1: playSnake(); break;
-#ifdef INCLUDE_PONG_GAME
-          case 2: playPong(); break;
-#endif
-          case 3: handleBt(); break;
           default: break;
         }
         drawMenu();
       }
       
-      //move cursor up
-      else if (anyKey == KEY_UP)
-      {
-        if (cursor > 0)
-          cursor--;
-        else
-          cursor = 3;
-        drawMenuCursor(cursor);
-      }
-      
-      //move cursor down
-      else if (anyKey == KEY_DOWN)
-      {
-        if (cursor < 3)
-          cursor++;
-        else
-          cursor = 0;
-        drawMenuCursor(cursor);
-      }
-      
+    
       //adjust contrast
       else if (anyKey == KEY_RIGHT)
       {
@@ -259,19 +213,6 @@ proc1(void* arg)
       }
     }
 
-#ifdef INCLUDE_MENU_FIRE
-    switch(i)
-    {
-      case 0: lcdIcon(15, 88, 100, 40, _fire_0_100x40c[2], _fire_0_100x40c[3], &_fire_0_100x40c[4]); i++; break;
-      case 1: lcdIcon(15, 88, 100, 40, _fire_1_100x40c[2], _fire_1_100x40c[3], &_fire_1_100x40c[4]); i++; break;
-      case 2: lcdIcon(15, 88, 100, 40, _fire_2_100x40c[2], _fire_2_100x40c[3], &_fire_2_100x40c[4]); i++; break;
-      case 3: lcdIcon(15, 88, 100, 40, _fire_3_100x40c[2], _fire_3_100x40c[3], &_fire_3_100x40c[4]); i++; break;
-      case 4: lcdIcon(15, 88, 100, 40, _fire_4_100x40c[2], _fire_4_100x40c[3], &_fire_4_100x40c[4]); i++; break;
-      case 5: lcdIcon(15, 88, 100, 40, _fire_5_100x40c[2], _fire_5_100x40c[3], &_fire_5_100x40c[4]); i++; break;
-      case 6: lcdIcon(15, 88, 100, 40, _fire_6_100x40c[2], _fire_6_100x40c[3], &_fire_6_100x40c[4]); i = 0; break;
-      default: i = 0; break;
-    }
-#endif
     osSleep(20);
   }
 }
@@ -324,7 +265,6 @@ initProc(void* arg)
   osCreateProcess(proc1, proc1Stack, PROC1_STACK_SIZE, &pid1, 3, NULL, &error);
   osStartProcess(pid1, &error);
 
-  initBtProc();
   
   initKeyProc();
 
