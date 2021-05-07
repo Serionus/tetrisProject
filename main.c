@@ -22,11 +22,12 @@
 
 #include "lcd.h"
 #include "key.h"
+#include "uart.h"
+#include "exampleGame.h"
 #include "hw.h"
 #include "version.h"
 #include "configAppl.h"
-#include "startupDisplay.h"
-
+#include "tetris.h"
 /******************************************************************************
  * Typedefs and defines
  *****************************************************************************/
@@ -97,7 +98,7 @@ drawMenuCursor(tU8 cursor)
 {
   tU32 row;
 
-  for(row=0; row<1; row++)
+  for(row=0; row<4; row++)
   {
     lcdGotoxy(18,20+(14*row));
     if(row == cursor)
@@ -107,7 +108,9 @@ drawMenuCursor(tU8 cursor)
     
     switch(row)
     {
-      case 0: lcdPuts("Tetris"); break;
+      case 0: lcdPuts("joystick..."); break;
+      case 1: lcdPuts("rysowanie..."); break;
+
       default: break;
     }
   }
@@ -190,13 +193,34 @@ proc1(void* arg)
       {
         switch(cursor)
         {
-          case 0: playExample(); break;
+          case 0: logKeys(); break;
+          case 1: playTetris(); break;
+
           default: break;
         }
         drawMenu();
       }
       
-    
+      //move cursor up
+      else if (anyKey == KEY_UP)
+      {
+        if (cursor > 0)
+          cursor--;
+        else
+          cursor = 1;
+        drawMenuCursor(cursor);
+      }
+      
+      //move cursor down
+      else if (anyKey == KEY_DOWN)
+      {
+        if (cursor < 1)
+          cursor++;
+        else
+          cursor = 0;
+        drawMenuCursor(cursor);
+      }
+      
       //adjust contrast
       else if (anyKey == KEY_RIGHT)
       {
@@ -212,7 +236,6 @@ proc1(void* arg)
         lcdContrast(contrast);
       }
     }
-
     osSleep(20);
   }
 }
@@ -264,7 +287,6 @@ initProc(void* arg)
 
   osCreateProcess(proc1, proc1Stack, PROC1_STACK_SIZE, &pid1, 3, NULL, &error);
   osStartProcess(pid1, &error);
-
   
   initKeyProc();
 
