@@ -98,7 +98,7 @@ drawMenuCursor(tU8 cursor)
 {
   tU32 row;
 
-  for(row=0; row<4; row++)
+  for(row=0; row<1; row++)
   {
     lcdGotoxy(18,20+(14*row));
     if(row == cursor)
@@ -108,9 +108,7 @@ drawMenuCursor(tU8 cursor)
     
     switch(row)
     {
-      case 0: lcdPuts("joystick..."); break;
-      case 1: lcdPuts("rysowanie..."); break;
-
+      case 0: lcdPuts("WLACZ"); break;
       default: break;
     }
   }
@@ -132,9 +130,9 @@ drawMenu(void)
   lcdRect(14, 0, 102, 128, 0x6d);
   lcdRect(15, 17, 100, 110, 0);
 
-  lcdGotoxy(48,1);
+  lcdGotoxy(40,1);
   lcdColor(0x6d,0);
-  lcdPuts("MENU");
+  lcdPuts("TETRYS");
   drawMenuCursor(cursor);
 }
 
@@ -193,8 +191,7 @@ proc1(void* arg)
       {
         switch(cursor)
         {
-          case 0: logKeys(); break;
-          case 1: playTetris(); break;
+          case 0: playTetris(); break;
 
           default: break;
         }

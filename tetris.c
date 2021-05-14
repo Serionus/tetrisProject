@@ -18,6 +18,17 @@
 
 #include "select.h"
 
+#define GAME_NOT_STARTED 0
+#define GAME_RUNNING     1
+#define GAME_OVER        2
+#define GAME_END         3
+
+#define BOARD_WIDTH  10
+#define BOARD_HEIGHT 16
+
+#define FIGURE_SIZE 4
+#define NUM_OF_FIGURE 19
+
 #define timer (T1TCR & 0x01)
 
 void delayMS(tBool whichTimer,tU16 delay)
@@ -57,6 +68,7 @@ void bzzbzz() {
 }
 
 void logKeys () {
+	lcdClrscr();
 	while(1) {
 	    tU8 anyKey;
 	    anyKey = checkKey();
@@ -79,26 +91,69 @@ void logKeys () {
 
 void playTetris(){
 	lcdClrscr();
-	int counter = 0;
 
-	while (1) {
-		bzzbzz();
+	tBool isEnd;
+	tMenu mainMenu;
+	tBool mainMenuFlag = TRUE;
 
-		delayMS(TRUE, 500);
-		if(counter % 2 == 0) {
-			lcdPuts("\n rysowanie");
-			counter ++;
-		} else if(counter % 2 == 1) {
-			lcdPuts("\n na ekranie");
-			counter ++;
-		}
-		if(counter == 6) {
+	mainMenu.xPos = 5;
+	mainMenu.yPos = 26;
+	mainMenu.xLen = 6+(14*8);
+	mainMenu.yLen = 5*14;
+	mainMenu.noOfChoices = 3;
+	mainMenu.initialChoice = 0;
+	mainMenu.pHeaderText = "!TETRYS!";
+	mainMenu.headerTextXpos = 31;
+	mainMenu.pChoice[0] = "GRAJ";
+	mainMenu.pChoice[1] = "AUTORZY";
+	mainMenu.pChoice[2] = "WYJDZ";
+	mainMenu.bgColor       = 0x0;
+	mainMenu.borderColor   = 0x6d;
+	mainMenu.headerColor   = 0x0;
+	mainMenu.choicesColor  = 0xfd;
+	mainMenu.selectedColor = 0xe0;
+
+	while(mainMenuFlag){
+		switch(drawMenu(mainMenu)){
+		case 0:
+			logKeys(); break;
+		case 1:
 			lcdClrscr();
-			counter = 0;
-			lcdRect(0, 0, 130, 130, 0xFFFFFF);
-			lcdRect(55, 55, 20, 20, 0xFFF000);
+			lcdPuts("TWORCY:\n");
+			lcdPuts("Antoni Karwowski\n");
+			lcdPuts("Piotr Tomczak\n");
+			lcdPuts("Michal Gebel");
+			osSleep(400);
+			lcdClrscr();
+			break;
+		case 2:
+			mainMenuFlag = FALSE;
+			break;
 		}
+
 	}
+//	int counter = 0;
+//
+//	while (1) {
+//		bzzbzz();
+//
+//		delayMS(TRUE, 500);
+//		if(counter % 2 == 0) {
+//			lcdPuts("\n rysowanie");
+//			counter ++;
+//		} else if(counter % 2 == 1) {
+//			lcdPuts("\n na ekranie");
+//			counter ++;
+//		}
+//		if(counter == 6) {
+//			lcdClrscr();
+//			counter = 0;
+//			lcdRect(0, 0, 130, 130, 0xFFFFFF);
+//			lcdRect(55, 55, 20, 20, 0xFFF000);
+//			delayMS(TRUE, 5000);
+//			lcdClrscr();
+//		}
+
 }
 
 
