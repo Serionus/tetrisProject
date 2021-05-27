@@ -1,0 +1,7 @@
+#ifndef __COMMON_DEFINITIONS_H__
+#define __COMMON_DEFINITIONS_H__
+
+#define DIODA_ZIELONA		_BIT(28)
+#define DIODA_CZERWONA		_BIT(30)
+
+#endif //__COMMON_DEFINITIONS_H__

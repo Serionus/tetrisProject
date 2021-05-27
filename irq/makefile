@@ -2,16 +2,17 @@
 #
 # General makefile for building executable programs and
 # libraries for Embedded Artists' QuickStart Boards.
-# (C) 2001-2006 Embedded Artists AB
+# (C) 2001-2005 Embedded Artists AB
 #
 ##########################################################
 
 # Name of target (executable program or library) 
-NAME      = lpc2104_color_lcd_v1.9
+NAME      = irq_handler
 
 # Link program to RAM or ROM (possible values for LD_RAMROM is RAM or ROM,
 # if not specified = ROM)
-LD_RAMROM = ROM
+# Get value from parent makefile instead
+#LD_RAMROM =
 
 # Name if specific CPU used (used by linker scripts to define correct memory map)
 # Valid CPUs are: LPC2101, LPC2102, LPC2103, LPC2104, LPC2105, LPC2106
@@ -28,8 +29,7 @@ CPU_VARIANT = LPC2104
 
 # It is possible to override the automatic linker file selection with the variable below.
 # No not use this opion unless you have very specific needs.
-#LD_SCRIPT      = build_files/myOwnLinkScript_rom.ld
-#LD_SCRIPT_PATH = 
+#LD_SCRIPT = build_files/myOwnLinkScript_rom.ld
 
 # ELF-file contains debug information, or not
 # (possible values for DEBUG are 0 or 1)
@@ -47,41 +47,26 @@ EFLAGS  = -mthumb-interwork
 
 # Program code run in ARM or THUMB mode
 # Can be [ARM | THUMB]
-CODE    = THUMB
+CODE    = ARM
 
 # List C source files here.
-CSRCS   = main.c           \
-          lcd.c            \
-          key.c            \
-          select.c         \
-          uart.c           \
-          exampleGame.c    \
-          eeprom.c         \
-          i2c.c            \
-          tetris.c         \
-          hw.c			   \
-          mainMenu.c
-          
-          
+CSRCS   = irq_handler.c
+
 # List assembler source files here
 ASRCS   = 
 
 # List subdirectories to recursively invoke make in 
-SUBDIRS = startup \
-          irq_code
+SUBDIRS = 
 
 # List additional libraries to link with
-LIBS    = startup/libea_startup_thumb.a \
-          irq_code/irqUart.a \
-          gcc_files/libm.a \
-          pre_emptive_os/pre_emptive_os.a
+LIBS    = 
 
 # Add include search path for startup files, and other include directories
-INC     = -I./startup
+INC     = -I../startup
 
 # Select if an executable program or a library shall be created
-PROGRAM_MK  = true
-#LIBRARY_MK  = true
+#PROGRAM_MK  = true
+LIBRARY_MK  = true
 
 # Output format on hex file (if making a program); can be [srec | ihex]
 HEX_FORMAT  = ihex
@@ -91,10 +76,10 @@ DOWNLOAD    = lpc21isp.exe
 
 # Configurations for download program
 # Which com-pot that is used, which download speed and what crystal frequency on the board.
-DL_COMPORT  = com5
+DL_COMPORT  = com3
 DL_BAUDRATE = 115200
-DL_CRYSTAL  = 14746
+DL_CRYSTAL  = 14745
 
 #######################################################################
-include build_files/general.mk
+include ../build_files/general.mk
 #######################################################################

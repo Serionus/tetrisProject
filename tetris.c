@@ -1,10 +1,3 @@
-/*
- * tetris.c
- *
- *  Created on: May 7, 2021
- *      Author: embedded
- */
-
 #include "../pre_emptive_os/api/osapi.h"
 #include "../pre_emptive_os/api/general.h"
 #include <printf_P.h>
@@ -17,19 +10,10 @@
 #include "../startup/lpc2xxx.h"
 
 #include "select.h"
-
-#define GAME_NOT_STARTED 0
-#define GAME_RUNNING     1
-#define GAME_OVER        2
-#define GAME_END         3
-
-#define BOARD_WIDTH  10
-#define BOARD_HEIGHT 16
-
-#define FIGURE_SIZE 4
-#define NUM_OF_FIGURE 19
-
 #define timer (T1TCR & 0x01)
+
+/* Stale */
+tU8 boxesList[12][18];
 
 void delayMS(tBool whichTimer,tU16 delay)
 {
@@ -57,103 +41,73 @@ void delayMS(tBool whichTimer,tU16 delay)
 	}
 }
 
-void bzzbzz() {
-	tU16 i;
-	for(i=0; i < 50; i++) {
-		setBuzzer(TRUE);
-		delayMS(TRUE, 2);
-		setBuzzer(FALSE);
-		delayMS(TRUE, 2);
-	}
-}
-
-void logKeys () {
-	lcdClrscr();
-	while(1) {
-	    tU8 anyKey;
-	    anyKey = checkKey();
-	    if (anyKey != KEY_NOTHING) {
-	      if (anyKey == KEY_CENTER) {
-	    	  bzzbzz();
-	    	  lcdClrscr();
-	      }else if (anyKey == KEY_LEFT) {
-	    	  lcdPuts("\n wcisles LEFT");
-	      }else if (anyKey == KEY_RIGHT) {
-	    	  lcdPuts("\n wcisles RIGHT");
-	      }else if (anyKey == KEY_UP) {
-	    	  lcdPuts("\n wcisles UP");
-	      }else if (anyKey == KEY_DOWN) {
-	    	  lcdPuts("\n wcisles DOWN");
-	      }
-	    }
-	}
-}
-
-void playTetris(){
-	lcdClrscr();
-
-	tBool isEnd;
-	tMenu mainMenu;
-	tBool mainMenuFlag = TRUE;
-
-	mainMenu.xPos = 5;
-	mainMenu.yPos = 26;
-	mainMenu.xLen = 6+(14*8);
-	mainMenu.yLen = 5*14;
-	mainMenu.noOfChoices = 3;
-	mainMenu.initialChoice = 0;
-	mainMenu.pHeaderText = "!TETRYS!";
-	mainMenu.headerTextXpos = 31;
-	mainMenu.pChoice[0] = "GRAJ";
-	mainMenu.pChoice[1] = "AUTORZY";
-	mainMenu.pChoice[2] = "WYJDZ";
-	mainMenu.bgColor       = 0x0;
-	mainMenu.borderColor   = 0x6d;
-	mainMenu.headerColor   = 0x0;
-	mainMenu.choicesColor  = 0xfd;
-	mainMenu.selectedColor = 0xe0;
-
-	while(mainMenuFlag){
-		switch(drawMenu(mainMenu)){
-		case 0:
-			logKeys(); break;
-		case 1:
-			lcdClrscr();
-			lcdPuts("TWORCY:\n");
-			lcdPuts("Antoni Karwowski\n");
-			lcdPuts("Piotr Tomczak\n");
-			lcdPuts("Michal Gebel");
-			osSleep(400);
-			lcdClrscr();
-			break;
-		case 2:
-			mainMenuFlag = FALSE;
-			break;
+void drawBoard() {
+	int i;
+	int j;
+	for (i = 0; i < 12; i++) {
+		for (j = 0; j < 18; j++) {
+			if (boxesList[i][j] != 0) {
+				lcdRect(i*7 + 22, j*7, 5, 5, 255);
+			}
 		}
-
 	}
-//	int counter = 0;
-//
-//	while (1) {
-//		bzzbzz();
-//
-//		delayMS(TRUE, 500);
-//		if(counter % 2 == 0) {
-//			lcdPuts("\n rysowanie");
-//			counter ++;
-//		} else if(counter % 2 == 1) {
-//			lcdPuts("\n na ekranie");
-//			counter ++;
-//		}
-//		if(counter == 6) {
-//			lcdClrscr();
-//			counter = 0;
-//			lcdRect(0, 0, 130, 130, 0xFFFFFF);
-//			lcdRect(55, 55, 20, 20, 0xFFF000);
-//			delayMS(TRUE, 5000);
-//			lcdClrscr();
-//		}
-
 }
+
+void applyGravity() {
+	int i;
+		int j;
+		for (i = 12; i > 0; i--) {
+			for (j = 17; j > 0; j--) {
+				if (boxesList[i][j + 1] == 0 && boxesList[i][j] != 0) {
+					boxesList[i][j] = 0;
+					boxesList[i][j + 1] = 1;
+				}
+			}
+		}
+}
+
+void playTetris () {
+	lcdClrscr();
+	int i;
+	int j;
+	for (i = 0; i < 12; i++) {
+		for (j = 0; j <18; j++) {
+			boxesList[i][j] = 0;
+		}
+	}
+	boxesList[5][0] = 1;
+	boxesList[6][0] = 1;
+	boxesList[7][0] = 1;
+	boxesList[8][0] = 1;
+
+	while (1) {
+		lcdClrscr();
+		applyGravity();
+		drawBoard();
+		delayMS(TRUE, 1000);
+	}
+//	while(1) {
+//	    tU8 anyKey;
+//	    anyKey = checkKey();
+//	    if (anyKey != KEY_NOTHING) {
+//	      if (anyKey == KEY_CENTER) {
+//	    	  lcdClrscr();
+//	      }else if (anyKey == KEY_LEFT) {
+//	    	  lcdPuts("\n" + boxesList[0][0]+40);
+//	      }else if (anyKey == KEY_RIGHT) {
+//	    	  lcdPuts("\n wcisles RIGHT");
+//	      }else if (anyKey == KEY_UP) {
+//	    	  lcdPuts("\n wcisles UP");
+//	      }else if (anyKey == KEY_DOWN) {
+//	    	  lcdPuts("\n wcisles DOWN");
+//	      }
+//	    }
+//	}
+}
+
+
+
+
+
 
 
