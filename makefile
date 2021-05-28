@@ -60,7 +60,9 @@ CSRCS   = main.c           \
           i2c.c            \
           tetris.c         \
           hw.c			   \
-          mainMenu.c
+          mainMenu.c       \
+          music.c          \
+          led.c
           
           
 # List assembler source files here
