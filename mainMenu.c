@@ -14,6 +14,7 @@
 #include "select.h"
 #include "tetris.h"
 #include "../startup/lpc2xxx.h"
+//#include "music.h"
 
 #include "select.h"
 
@@ -42,6 +43,7 @@ void drawMainMenu(){
 	mainMenu.selectedColor = 0xe0;
 
 	while(mainMenuFlag){
+//		switchMusic(1);
 		switch(drawMenu(mainMenu)){
 		case 0:
 			playTetris(); break;

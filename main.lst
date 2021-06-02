@@ -1,4 +1,4 @@
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 1
 
 
    1              		.code	16
@@ -58,7 +58,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
   33:main.c        **** static tU8 pid1;
   34:main.c        **** 
   35:main.c        **** 
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 2
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 2
 
 
   36:main.c        **** /*****************************************************************************
@@ -118,7 +118,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
   90:main.c        ****       osSleep(1);
   91:main.c        **** 
   92:main.c        ****       setBuzzer(FALSE);
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 3
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 3
 
 
   93:main.c        ****       setLED(LED_GREEN, TRUE);
@@ -178,7 +178,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  147:main.c        **** 
  148:main.c        ****   printf("\n*                                                       *");
  149:main.c        ****   printf("\n* (C) Embedded Artists AB, 2006                         *");
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 4
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 4
 
 
  150:main.c        ****   printf("\n*                                                       *");
@@ -238,7 +238,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
   44              	.LFB2:
   45              		.loc 1 51 0
   46 0010 30B5     		push	{r4, r5, lr}
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 5
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 5
 
 
   47              	.LCFI0:
@@ -298,7 +298,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
   96      2A2A2A2A 
   96      2A2A00
   97 003b 00       		.align	2
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 6
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 6
 
 
   98              	.LC5:
@@ -358,7 +358,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  119      79206672 
  119      6F6D2053 
  120 0198 20202020 		.ascii	"         *\000"
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 7
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 7
 
 
  120      20202020 
@@ -418,7 +418,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  143      20202020 
  143      202A00
  144 02d7 00       		.align	2
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 8
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 8
 
 
  145              	.LC31:
@@ -478,7 +478,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  187              		.loc 1 131 0
  188 008a 2948     		ldr	r0, .L16+24
  189 008c FFF7FEFF 		bl	simplePrintf
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 9
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 9
 
 
  190              		.loc 1 132 0
@@ -538,7 +538,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  244 00ee 9200     		lsl	r2, r2, #2
  245 00f0 0193     		str	r3, [sp, #4]
  246 00f2 0F34     		add	r4, r4, #15
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 10
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 10
 
 
  247 00f4 2B1C     		mov	r3, r5
@@ -598,7 +598,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  301              		.loc 1 79 0
  302 016a 0025     		mov	r5, #0
  303              	.LVL5:
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 11
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 11
 
 
  304 016c 39E0     		b	.L19
@@ -658,7 +658,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  358 01c4 FFF7FEFF 		bl	osSleep
  359              		.loc 1 85 0
  360 01c8 631C     		add	r3, r4, #1
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 12
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 12
 
 
  361 01ca 1B06     		lsl	r3, r3, #24
@@ -718,7 +718,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  407 0014 00000000 		.4byte	.Lframe0
  408 0018 00000000 		.4byte	.LFB5
  409 001c 10000000 		.4byte	.LFE5-.LFB5
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 13
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 13
 
 
  410              		.align	2
@@ -778,7 +778,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  464 0069 0E       		.byte	0xe
  465 006a 0C       		.uleb128 0xc
  466 006b 84       		.byte	0x84
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 14
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 14
 
 
  467 006c 03       		.uleb128 0x3
@@ -838,7 +838,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  521              	.LLST4:
  522 0069 68010000 		.4byte	.LFB3-.Ltext0
  523 006d 6A010000 		.4byte	.LCFI4-.Ltext0
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 15
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 15
 
 
  524 0071 0100     		.2byte	0x1
@@ -898,7 +898,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  578 0014 00000000 		.4byte	.Ltext0
  579 0018 F2000000 		.4byte	.LASF23
  580 001c 01       		.byte	0x1
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 16
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 16
 
 
  581 001d BD000000 		.4byte	.LASF24
@@ -958,7 +958,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  635 0086 05       		.byte	0x5
  636 0087 03       		.uleb128 0x3
  637 0088 2F000000 		.4byte	.LASF9
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 17
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 17
 
 
  638 008c 08       		.byte	0x8
@@ -1018,7 +1018,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  692 00f8 75       		.byte	0x75
  693 00f9 00       		.sleb128 0
  694 00fa 00       		.byte	0x0
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 18
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 18
 
 
  695 00fb 0C       		.uleb128 0xc
@@ -1078,7 +1078,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  749 0178 25000000 		.4byte	0x25
  750 017c 10       		.uleb128 0x10
  751 017d 70000000 		.4byte	0x70
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 19
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 19
 
 
  752 0181 1F03     		.2byte	0x31f
@@ -1138,7 +1138,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  806 01ee 03       		.byte	0x3
  807 01ef 00000000 		.4byte	ms
  808 01f3 13       		.uleb128 0x13
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 20
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 20
 
 
  809 01f4 3E000000 		.4byte	0x3e
@@ -1198,7 +1198,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  863 0033 0B       		.uleb128 0xb
  864 0034 49       		.uleb128 0x49
  865 0035 13       		.uleb128 0x13
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 21
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 21
 
 
  866 0036 00       		.byte	0x0
@@ -1258,7 +1258,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  920 006c 02       		.uleb128 0x2
  921 006d 0A       		.uleb128 0xa
  922 006e 00       		.byte	0x0
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 22
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 22
 
 
  923 006f 00       		.byte	0x0
@@ -1318,7 +1318,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  977 00a5 00       		.byte	0x0
  978 00a6 00       		.byte	0x0
  979 00a7 0C       		.uleb128 0xc
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 23
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 23
 
 
  980 00a8 2E       		.uleb128 0x2e
@@ -1378,7 +1378,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  1034 00de 13       		.uleb128 0x13
  1035 00df 49       		.uleb128 0x49
  1036 00e0 13       		.uleb128 0x13
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 24
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 24
 
 
  1037 00e1 00       		.byte	0x0
@@ -1438,7 +1438,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  1091 0000 2A000000 		.4byte	0x2a
  1092 0004 0200     		.2byte	0x2
  1093 0006 00000000 		.4byte	.Ldebug_info0
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 25
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 25
 
 
  1094 000a F9010000 		.4byte	0x1f9
@@ -1498,7 +1498,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  1130      676E6564 
  1130      20696E74 
  1130      00
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 26
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 26
 
 
  1131              	.LASF21:
@@ -1558,7 +1558,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  1157              	.LASF16:
  1158 0108 696E6974 		.ascii	"initProc\000"
  1158      50726F63 
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 27
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 27
 
 
  1158      00
@@ -1575,26 +1575,26 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 1
  1166 0123 70726F63 		.ascii	"proc1\000"
  1166      3100
  1167              		.ident	"GCC: (GNU) 4.1.1"
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s 			page 28
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s 			page 28
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:1      .text:00000000 $t
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:16     .text:00000000 appTick
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:35     .text:0000000c $d
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:1      .text:00000000 $t
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:16     .text:00000000 appTick
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:35     .text:0000000c $d
                             *COM*:00000004 ms
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:43     .text:00000010 main
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:40     .text:00000010 $t
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:88     .text:00000054 $d
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:157    .text:0000005c initProc
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:384    .bss:00000320 initStack
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:154    .text:0000005c $t
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:269    .text:00000118 $d
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:386    .bss:00000578 pid1
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:295    .text:00000168 proc1
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:382    .bss:00000000 proc1Stack
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccGX2dTP.s:292    .text:00000168 $t
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:43     .text:00000010 main
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:40     .text:00000010 $t
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:88     .text:00000054 $d
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:157    .text:0000005c initProc
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:384    .bss:00000320 initStack
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:154    .text:0000005c $t
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:269    .text:00000118 $d
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:386    .bss:00000578 pid1
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:295    .text:00000168 proc1
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:382    .bss:00000000 proc1Stack
+/cygdrive/c/Users/embedded/AppData/Local/Temp/ccx9BM6j.s:292    .text:00000168 $t
                              .bss:00000000 $d
 
 UNDEFINED SYMBOLS

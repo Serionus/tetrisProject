@@ -12,8 +12,69 @@
 #include "select.h"
 #define timer (T1TCR & 0x01)
 
+/*
+ *
+ *
+ * gotowe:
+ * 4 lcd spi gpio timer
+ * todo:
+ * zapis danych i2c i eeprom  2
+ * przerwania 1
+ * wypisywanie na komputerze 1
+ * rozna czestotliwosc dzwieku 0.5
+ *
+ *
+ *  */
 /* Stale */
-tU8 boxesList[12][18];
+tU8 board[12][18];
+tU8 activeBlock[4][2];
+
+
+tBool isInActiveBlock(tU8 x, tU8 y) {
+	int i;
+	for(i = 0; i < 4; i++) {
+		if(activeBlock[i][0] == x && activeBlock[i][1] == y) {
+			return TRUE;
+		}
+	}
+	return FALSE;
+}
+
+tBool detectCollisionLeft() {
+	int i;
+	for (i = 0; i < 4; i++) {
+		int X = activeBlock[i][0];
+		int Y = activeBlock[i][1];
+		if ((board[X-1][Y] == 1 && !isInActiveBlock(X -1, Y)) || X == 0) {
+			return TRUE;
+		}
+	}
+	return FALSE;
+}
+
+tBool detectCollisionRight() {
+	int i;
+	for (i = 0; i < 4; i++) {
+		int X = activeBlock[i][0];
+		int Y = activeBlock[i][1];
+		if((board[X + 1][Y] == 1 && !isInActiveBlock(X + 1, Y)) || X == 11) {
+			return TRUE;
+		}
+	}
+	return FALSE;
+}
+
+tBool detectCollisionDown() {
+	int i;
+	for (i = 0; i < 4; i++) {
+		int X = activeBlock[i][0];
+		int Y = activeBlock[i][1];
+		if((board[X][Y+1] == 1 && !isInActiveBlock(X, Y + 1)) || Y == 17) {
+			return TRUE;
+		}
+	}
+	return FALSE;
+}
 
 void delayMS(tBool whichTimer,tU16 delay)
 {
@@ -25,7 +86,6 @@ void delayMS(tBool whichTimer,tU16 delay)
 		T1IR  = 0xff;          //ustaw flagi przerwan
 		T1MCR = 0x04;          //zatrzymaj timer po MR0
 		T1TCR = 0x01;          //start
-
 		//czekaj na przerwanie
 		while (T1TCR & 0x01);
 	}
@@ -42,28 +102,86 @@ void delayMS(tBool whichTimer,tU16 delay)
 }
 
 void drawBoard() {
+	lcdRect(24, 125, 82, 5, 53);
 	int i;
 	int j;
 	for (i = 0; i < 12; i++) {
 		for (j = 0; j < 18; j++) {
-			if (boxesList[i][j] != 0) {
-				lcdRect(i*7 + 22, j*7, 5, 5, 255);
+			if (board[i][j] != 0) {
+				lcdRect(i*7 + 24, j*7, 5, 5, 255);
 			}
 		}
 	}
 }
 
-void applyGravity() {
+void moveActiveBlock(tBool left, tBool right, tBool down) {
 	int i;
-		int j;
-		for (i = 12; i > 0; i--) {
-			for (j = 17; j > 0; j--) {
-				if (boxesList[i][j + 1] == 0 && boxesList[i][j] != 0) {
-					boxesList[i][j] = 0;
-					boxesList[i][j + 1] = 1;
-				}
-			}
+	for(i = 0; i < 4; i++) {
+		int X = activeBlock[i][0];
+		int Y = activeBlock[i][1];
+		if(left) {
+			board[X][Y] = 0;
+			board[X - 1][Y] = 1;
+			activeBlock[i][0] = X - 1;
 		}
+		else if(right) {
+			board[X][Y] = 0;
+			board[X + 1][Y] = 1;
+			activeBlock[i][0] = X + 1;
+		}
+		else if(down) {
+			board[X][Y] = 0;
+			board[X][Y + 1] = 1;
+			activeBlock[i][1] = Y + 1;
+		}
+	}
+}
+
+void rotateActiveBlock() {
+
+}
+
+void applyJoystickMovement() {
+	tU8 anyKey;
+	anyKey = checkKey();
+	if (anyKey != KEY_NOTHING) {
+	  if (anyKey == KEY_CENTER) {
+		  // nic się nie dzieje
+	  }else if (anyKey == KEY_LEFT && !detectCollisionLeft()) {
+		  moveActiveBlock(TRUE, FALSE, FALSE);
+	  }else if (anyKey == KEY_RIGHT && !detectCollisionRight()) {
+		  moveActiveBlock(FALSE, TRUE, FALSE);
+	  }else if (anyKey == KEY_UP) {
+		  rotateActiveBlock();
+	  }else if (anyKey == KEY_DOWN) {
+		  // nic się nie dzieje
+	  }
+	}
+}
+
+//////////////////////////////////////////////////////////////
+
+
+void generateNewActiveBlock() {
+	if (detectCollisionDown()) {
+		activeBlock[0][0] = 0;
+		activeBlock[1][0] = 0;
+		activeBlock[2][0] = 0;
+		activeBlock[3][0] = 0;
+		activeBlock[0][1] = 4;
+		activeBlock[1][1] = 3;
+		activeBlock[2][1] = 2;
+		activeBlock[3][1] = 1;
+	}
+}
+
+////////////////////////////////////////////////////////////
+
+cleanBoard() {
+	int i;
+	for (i = 0; i < 12; i++) {
+//		board[][]
+	}
 }
 
 void playTetris () {
@@ -72,37 +190,28 @@ void playTetris () {
 	int j;
 	for (i = 0; i < 12; i++) {
 		for (j = 0; j <18; j++) {
-			boxesList[i][j] = 0;
+			board[i][j] = 0;
 		}
 	}
-	boxesList[5][0] = 1;
-	boxesList[6][0] = 1;
-	boxesList[7][0] = 1;
-	boxesList[8][0] = 1;
+	board[4][17] = 1;
+	activeBlock[0][0] = 0;
+	activeBlock[1][0] = 0;
+	activeBlock[2][0] = 0;
+	activeBlock[3][0] = 0;
+	activeBlock[0][1] = 4;
+	activeBlock[1][1] = 3;
+	activeBlock[2][1] = 2;
+	activeBlock[3][1] = 1;
 
 	while (1) {
 		lcdClrscr();
-		applyGravity();
+		applyJoystickMovement();
+		generateNewActiveBlock();
+		moveActiveBlock(FALSE, FALSE, TRUE);
 		drawBoard();
-		delayMS(TRUE, 1000);
+		delayMS(TRUE, 500);
 	}
-//	while(1) {
-//	    tU8 anyKey;
-//	    anyKey = checkKey();
-//	    if (anyKey != KEY_NOTHING) {
-//	      if (anyKey == KEY_CENTER) {
-//	    	  lcdClrscr();
-//	      }else if (anyKey == KEY_LEFT) {
-//	    	  lcdPuts("\n" + boxesList[0][0]+40);
-//	      }else if (anyKey == KEY_RIGHT) {
-//	    	  lcdPuts("\n wcisles RIGHT");
-//	      }else if (anyKey == KEY_UP) {
-//	    	  lcdPuts("\n wcisles UP");
-//	      }else if (anyKey == KEY_DOWN) {
-//	    	  lcdPuts("\n wcisles DOWN");
-//	      }
-//	    }
-//	}
+
 }
 
 

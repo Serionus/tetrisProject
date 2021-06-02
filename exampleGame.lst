@@ -1,4 +1,4 @@
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 1
 
 
    1              		.code	16
@@ -58,7 +58,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
   34:exampleGame.c **** #define GAME_END         3
   35:exampleGame.c **** 
   36:exampleGame.c **** #define BOARD_WIDTH  10
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 2
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 2
 
 
   37:exampleGame.c **** #define BOARD_HEIGHT 16
@@ -118,7 +118,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
   91:exampleGame.c ****  {"XXX.",
   92:exampleGame.c ****   "..X.",
   93:exampleGame.c ****   "....",
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 3
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 3
 
 
   94:exampleGame.c ****   "...."},
@@ -178,7 +178,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  148:exampleGame.c **** /*****************************************************************************
  149:exampleGame.c ****  *
  150:exampleGame.c ****  * Description:
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 4
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 4
 
 
  151:exampleGame.c ****  *    Check if current place for figure is valid
@@ -238,7 +238,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  164:exampleGame.c **** 
  165:exampleGame.c ****   for (i=0; i<FIGURE_SIZE; i++)
  166:exampleGame.c ****     for (j=0; j<FIGURE_SIZE; j++)
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 5
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 5
 
 
  167:exampleGame.c ****       if((i+x < BOARD_WIDTH) &&
@@ -298,7 +298,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  112 007e 054A     		ldr	r2, .L29+4
  113 0080 9B19     		add	r3, r3, r6
  114 0082 9B00     		lsl	r3, r3, #2
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 6
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 6
 
 
  115 0084 9918     		add	r1, r3, r2
@@ -358,7 +358,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  195:exampleGame.c **** 
  196:exampleGame.c **** 
  197:exampleGame.c **** /*****************************************************************************
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 7
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 7
 
 
  198:exampleGame.c ****  *
@@ -418,7 +418,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  181 00c6 9818     		add	r0, r3, r2
  182 00c8 3319     		add	r3, r6, r4
  183 00ca 1B01     		lsl	r3, r3, #4
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 8
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 8
 
 
  184 00cc 054A     		ldr	r2, .L41+4
@@ -478,7 +478,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  235:exampleGame.c ****  * Description:
  236:exampleGame.c ****  *    Returns TRUE if one row of the board is full
  237:exampleGame.c ****  *
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 9
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 9
 
 
  238:exampleGame.c ****  ****************************************************************************/
@@ -538,7 +538,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  292:exampleGame.c ****     if(full(j))
  293:exampleGame.c ****     {
  294:exampleGame.c ****       //if so, erase that row...
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 10
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 10
 
 
  295:exampleGame.c ****       for(k=j; k>0; k--)
@@ -598,7 +598,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  349:exampleGame.c **** /*****************************************************************************
  350:exampleGame.c ****  *
  351:exampleGame.c ****  * Description:
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 11
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 11
 
 
  352:exampleGame.c ****  *    Advance the game, check if game is over
@@ -658,7 +658,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  263 0130 0634     		add	r4, r4, #6
  264 0132 0435     		add	r5, r5, #4
  265              		.loc 1 189 0
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 12
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 12
 
 
  266 0134 702C     		cmp	r4, #112
@@ -718,7 +718,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  318 0172 614B     		ldr	r3, .L104+12
  319 0174 1B78     		ldrb	r3, [r3]
  320 0176 4A2B     		cmp	r3, #74
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 13
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 13
 
 
  321 0178 02D9     		bls	.L57
@@ -778,7 +778,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  369 01a6 5748     		ldr	r0, .L104+24
  370 01a8 544B     		ldr	r3, .L104+16
  371 01aa 2268     		ldr	r2, [r4]
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 14
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 14
 
 
  372 01ac 0168     		ldr	r1, [r0]
@@ -838,7 +838,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  412 01e8 FFF7FEFF 		bl	rand
  413 01ec 1321     		mov	r1, #19
  414 01ee FFF7FEFF 		bl	__modsi3
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 15
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 15
 
 
  415 01f2 3E4C     		ldr	r4, .L104
@@ -898,7 +898,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  465              	.LBE27:
  466              	.LBE26:
  467              		.loc 1 297 0
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 16
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 16
 
 
  468 022c 1368     		ldr	r3, [r2]
@@ -958,7 +958,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  522 027c FFF7FEFF 		bl	__umodsi3
  523              		.loc 1 266 0
  524 0280 0023     		mov	r3, #0
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 17
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 17
 
 
  525 0282 EB70     		strb	r3, [r5, #3]
@@ -1018,7 +1018,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  573 02bc 9300     		lsl	r3, r2, #2
  574 02be 1B19     		add	r3, r3, r4
  575 02c0 134A     		ldr	r2, .L104+36
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 18
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 18
 
 
  576 02c2 9B00     		lsl	r3, r3, #2
@@ -1078,7 +1078,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  627              		.thumb_func
  628              		.type	setupGame, %function
  629              	setupGame:
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 19
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 19
 
 
  630              	.LFB12:
@@ -1138,7 +1138,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  662 0338 1020     		mov	r0, #16
  663 033a FFF7FEFF 		bl	lcdGotoxy
  413:exampleGame.c ****     lcdPuts(" Score:   0 ");
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 20
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 20
 
 
  664              		.loc 1 413 0
@@ -1198,7 +1198,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  704 037c 0321     		mov	r1, #3
  705              		.loc 1 426 0
  706 037e 1C60     		str	r4, [r3]
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 21
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 21
 
 
  707              		.loc 1 427 0
@@ -1258,7 +1258,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  758 03c8 90020000 		.word	lastUpdate
  759 03cc 04000000 		.word	board
  760              	.LFE12:
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 22
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 22
 
 
  761              		.size	setupGame, .-setupGame
@@ -1318,7 +1318,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  793 03d8 1A70     		strb	r2, [r3]
  443:exampleGame.c **** 
  444:exampleGame.c ****   setupGame(FALSE);
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 23
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 23
 
 
  794              		.loc 1 444 0
@@ -1378,7 +1378,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  460:exampleGame.c ****           setupGame(TRUE);
  461:exampleGame.c ****         }
  462:exampleGame.c ****         break;
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 24
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 24
 
 
  463:exampleGame.c ****         
@@ -1438,7 +1438,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  475:exampleGame.c ****               currYpos++;
  476:exampleGame.c ****           }
  477:exampleGame.c ****           else if (anyKey == KEY_RIGHT)
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 25
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 25
 
 
  875              		.loc 1 477 0
@@ -1498,7 +1498,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  495:exampleGame.c ****           advanceGame();
  912              		.loc 1 495 0
  913 047e FFF733FE 		bl	advanceGame
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 26
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 26
 
 
  914              	.LVL78:
@@ -1558,7 +1558,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  949 04ac 0A71     		strb	r2, [r1, #4]
  950              		.loc 1 509 0
  951 04ae 4871     		strb	r0, [r1, #5]
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 27
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 27
 
 
  952              		.loc 1 514 0
@@ -1618,7 +1618,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  998 04f8 2370     		strb	r3, [r4]
  999 04fa 0120     		mov	r0, #1
  1000              	.LVL80:
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 28
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 28
 
 
  1001 04fc FFF70AFF 		bl	setupGame
@@ -1678,7 +1678,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1043 0000 2E582E2E 		.ascii	".X.."
  1044 0004 2E582E2E 		.ascii	".X.."
  1045 0008 2E582E2E 		.ascii	".X.."
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 29
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 29
 
 
  1046 000c 2E582E2E 		.ascii	".X.."
@@ -1738,7 +1738,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1100 00e4 58582E2E 		.ascii	"XX.."
  1101 00e8 2E582E2E 		.ascii	".X.."
  1102 00ec 2E2E2E2E 		.ascii	"...."
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 30
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 30
 
 
  1103 00f0 2E58582E 		.ascii	".XX."
@@ -1798,7 +1798,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1153 0284 00000000 		.space	4
  1154              		.align	2
  1155              	currXpos:
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 31
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 31
 
 
  1156 0288 00000000 		.space	4
@@ -1858,7 +1858,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1210              		.4byte	.LCFI1-.LFB4
  1211 0041 0E       		.byte	0xe
  1212 0042 14       		.uleb128 0x14
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 32
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 32
 
 
  1213 0043 84       		.byte	0x84
@@ -1918,7 +1918,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1267 0089 46       		.byte	0x4
  1268              		.4byte	.LCFI5-.LCFI4
  1269 008a 0E       		.byte	0xe
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 33
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 33
 
 
  1270 008b 10       		.uleb128 0x10
@@ -1978,7 +1978,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1324 0035 62000000 		.4byte	.LVL8-.Ltext0
  1325 0039 70000000 		.4byte	.LVL11-.Ltext0
  1326 003d 0100     		.2byte	0x1
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 34
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 34
 
 
  1327 003f 50       		.byte	0x50
@@ -2038,7 +2038,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1381 00d2 76000000 		.4byte	.LVL13-.Ltext0
  1382 00d6 0100     		.2byte	0x1
  1383 00d8 52       		.byte	0x52
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 35
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 35
 
 
  1384 00d9 88000000 		.4byte	.LVL14-.Ltext0
@@ -2098,7 +2098,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1438 016d 0100     		.2byte	0x1
  1439 016f 54       		.byte	0x54
  1440 0170 00000000 		.4byte	0x0
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 36
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 36
 
 
  1441 0174 00000000 		.4byte	0x0
@@ -2158,7 +2158,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1495 0204 96010000 		.4byte	.LVL37-.Ltext0
  1496 0208 0100     		.2byte	0x1
  1497 020a 52       		.byte	0x52
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 37
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 37
 
 
  1498 020b BA020000 		.4byte	.LVL50-.Ltext0
@@ -2218,7 +2218,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1552 02a1 0100     		.2byte	0x1
  1553 02a3 51       		.byte	0x51
  1554 02a4 A8020000 		.4byte	.LVL48-.Ltext0
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 38
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 38
 
 
  1555 02a8 B0020000 		.4byte	.LVL49-.Ltext0
@@ -2278,7 +2278,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1609 0337 00000000 		.4byte	0x0
  1610 033b 00000000 		.4byte	0x0
  1611              	.LLST22:
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 39
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 39
 
 
  1612 033f 66030000 		.4byte	.LVL60-.Ltext0
@@ -2338,7 +2338,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1666 03d3 0100     		.2byte	0x1
  1667 03d5 50       		.byte	0x50
  1668 03d6 F6040000 		.4byte	.LVL79-.Ltext0
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 40
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 40
 
 
  1669 03da FC040000 		.4byte	.LVL80-.Ltext0
@@ -2398,7 +2398,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1723 0063 DC010000 		.4byte	.LASF5
  1724 0067 02       		.byte	0x2
  1725 0068 05       		.byte	0x5
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 41
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 41
 
 
  1726 0069 04       		.uleb128 0x4
@@ -2458,7 +2458,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1780 00cc 08       		.uleb128 0x8
  1781 00cd 20020000 		.4byte	.LASF14
  1782 00d1 03       		.byte	0x3
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 42
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 42
 
 
  1783 00d2 1C       		.byte	0x1c
@@ -2518,7 +2518,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1837 012f 61010000 		.4byte	.LASF21
  1838 0133 03       		.byte	0x3
  1839 0134 23       		.byte	0x23
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 43
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 43
 
 
  1840 0135 83010000 		.4byte	0x183
@@ -2578,7 +2578,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1894 0198 03       		.byte	0x3
  1895 0199 29       		.byte	0x29
  1896 019a B6000000 		.4byte	0xb6
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 44
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 44
 
 
  1897 019e 0B       		.uleb128 0xb
@@ -2638,7 +2638,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  1951 021d 69000000 		.4byte	0x69
  1952 0221 0B010000 		.4byte	.LLST7
  1953 0225 0C       		.uleb128 0xc
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 45
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 45
 
 
  1954 0226 7800     		.ascii	"x\000"
@@ -2698,7 +2698,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2008 0292 13       		.uleb128 0x13
  2009 0293 7800     		.ascii	"x\000"
  2010 0295 01       		.byte	0x1
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 46
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 46
 
 
  2011 0296 DE       		.byte	0xde
@@ -2758,7 +2758,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2065 02fc 69000000 		.4byte	0x69
  2066 0300 16       		.uleb128 0x16
  2067 0301 6B00     		.ascii	"k\000"
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 47
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 47
 
 
  2068 0303 01       		.byte	0x1
@@ -2818,7 +2818,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2122 0378 5A020000 		.4byte	0x25a
  2123 037c 02010000 		.4byte	.LBB16
  2124 0380 42010000 		.4byte	.LBE16
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 48
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 48
 
 
  2125 0384 01       		.byte	0x1
@@ -2878,7 +2878,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2179 0412 00       		.byte	0x0
  2180 0413 00       		.byte	0x0
  2181 0414 20       		.uleb128 0x20
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 49
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 49
 
 
  2182 0415 DE020000 		.4byte	0x2de
@@ -2938,7 +2938,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2236 049c 8D010000 		.4byte	.LASF38
  2237 04a0 01       		.byte	0x1
  2238 04a1 9101     		.2byte	0x191
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 50
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 50
 
 
  2239 04a3 01       		.byte	0x1
@@ -2998,7 +2998,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2293 0529 00       		.byte	0x0
  2294 052a 00       		.byte	0x0
  2295 052b 27       		.uleb128 0x27
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 51
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 51
 
 
  2296 052c 97010000 		.4byte	.LASF42
@@ -3058,7 +3058,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2350 05a1 69000000 		.4byte	0x69
  2351 05a5 05       		.byte	0x5
  2352 05a6 03       		.byte	0x3
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 52
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 52
 
 
  2353 05a7 84020000 		.4byte	currFigure
@@ -3118,7 +3118,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2407 061b 00       		.byte	0x0
  2408 061c 2B       		.uleb128 0x2b
  2409 061d E6010000 		.4byte	.LASF51
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 53
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 53
 
 
  2410 0621 01       		.byte	0x1
@@ -3178,7 +3178,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2464 002d 00       		.byte	0x0
  2465 002e 03       		.uleb128 0x3
  2466 002f 0E       		.uleb128 0xe
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 54
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 54
 
 
  2467 0030 3A       		.uleb128 0x3a
@@ -3238,7 +3238,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2521 0066 00       		.byte	0x0
  2522 0067 00       		.byte	0x0
  2523 0068 09       		.uleb128 0x9
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 55
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 55
 
 
  2524 0069 01       		.uleb128 0x1
@@ -3298,7 +3298,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2578 009f 00       		.byte	0x0
  2579 00a0 0D       		.uleb128 0xd
  2580 00a1 05       		.uleb128 0x5
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 56
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 56
 
 
  2581 00a2 00       		.byte	0x0
@@ -3358,7 +3358,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2635 00d8 03       		.uleb128 0x3
  2636 00d9 0E       		.uleb128 0xe
  2637 00da 3A       		.uleb128 0x3a
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 57
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 57
 
 
  2638 00db 0B       		.uleb128 0xb
@@ -3418,7 +3418,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2692 0111 0B       		.uleb128 0xb
  2693 0112 3B       		.uleb128 0x3b
  2694 0113 05       		.uleb128 0x5
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 58
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 58
 
 
  2695 0114 27       		.uleb128 0x27
@@ -3478,7 +3478,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2749 014a 00       		.byte	0x0
  2750 014b 18       		.uleb128 0x18
  2751 014c 2E       		.uleb128 0x2e
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 59
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 59
 
 
  2752 014d 01       		.byte	0x1
@@ -3538,7 +3538,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2806 0183 00       		.byte	0x0
  2807 0184 1B       		.uleb128 0x1b
  2808 0185 0B       		.uleb128 0xb
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 60
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 60
 
 
  2809 0186 01       		.byte	0x1
@@ -3598,7 +3598,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2863 01bc 58       		.uleb128 0x58
  2864 01bd 0B       		.uleb128 0xb
  2865 01be 59       		.uleb128 0x59
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 61
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 61
 
 
  2866 01bf 05       		.uleb128 0x5
@@ -3658,7 +3658,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2920 01f5 05       		.uleb128 0x5
  2921 01f6 27       		.uleb128 0x27
  2922 01f7 0C       		.uleb128 0xc
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 62
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 62
 
 
  2923 01f8 11       		.uleb128 0x11
@@ -3718,7 +3718,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  2977 022e 26       		.uleb128 0x26
  2978 022f 00       		.byte	0x0
  2979 0230 49       		.uleb128 0x49
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 63
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 63
 
 
  2980 0231 13       		.uleb128 0x13
@@ -3778,7 +3778,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  3032 001e 1C060000 		.4byte	0x61c
  3033 0022 66696775 		.ascii	"figures\000"
  3033      72657300 
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 64
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 64
 
 
  3034 002a 00000000 		.4byte	0x0
@@ -3838,7 +3838,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  3067 0071 794C656E 		.ascii	"yLen\000"
  3067      00
  3068              	.LASF34:
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 65
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 65
 
 
  3069 0076 63686563 		.ascii	"checkScore\000"
@@ -3898,7 +3898,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  3093      64726976 
  3093      652F632F 
  3093      456D6265 
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 66
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 66
 
 
  3093      64646564 
@@ -3958,7 +3958,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  3121      676E6564 
  3121      20636861 
  3121      7200
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 67
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 67
 
 
  3122              	.LASF52:
@@ -4018,7 +4018,7 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  3153 0240 78506F73 		.ascii	"xPos\000"
  3153      00
  3154              	.LASF33:
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 68
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 68
 
 
  3155 0245 67616D65 		.ascii	"gameOver\000"
@@ -4035,37 +4035,37 @@ ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 1
  3161      64657254 
  3161      65787400 
  3162              		.ident	"GCC: (GNU) 4.1.1"
-ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s 			page 69
+ARM GAS  /cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s 			page 69
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 exampleGame.c
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:1      .text:00000000 $t
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:15     .text:00000000 isValid
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:132    .text:00000090 $d
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:1042   .data:00000000 figures
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:1149   .bss:00000004 board
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:137    .text:00000098 $t
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:140    .text:00000098 insertFigure
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:203    .text:000000e0 $d
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:211    .text:000000e8 $t
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:214    .text:000000e8 advanceGame
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:608    .text:000002ec $d
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:1152   .bss:00000284 currFigure
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:1155   .bss:00000288 currXpos
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:1158   .bss:0000028c currYpos
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:1146   .bss:00000001 score
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:1164   .bss:00000294 delayTimeMs
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:1161   .bss:00000290 lastUpdate
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:1144   .bss:00000000 gameStatus
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:626    .text:00000314 $t
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:629    .text:00000314 setupGame
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:752    .text:000003b0 $d
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:781    .text:000003d0 playExample
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:778    .text:000003d0 $t
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:1027   .text:00000518 $d
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:1123   .rodata:00000000 shift
-/cygdrive/c/Users/embedded/AppData/Local/Temp/ccJFneWH.s:1124   .rodata:00000000 $d
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:1      .text:00000000 $t
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:15     .text:00000000 isValid
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:132    .text:00000090 $d
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:1042   .data:00000000 figures
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:1149   .bss:00000004 board
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:137    .text:00000098 $t
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:140    .text:00000098 insertFigure
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:203    .text:000000e0 $d
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:211    .text:000000e8 $t
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:214    .text:000000e8 advanceGame
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:608    .text:000002ec $d
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:1152   .bss:00000284 currFigure
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:1155   .bss:00000288 currXpos
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:1158   .bss:0000028c currYpos
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:1146   .bss:00000001 score
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:1164   .bss:00000294 delayTimeMs
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:1161   .bss:00000290 lastUpdate
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:1144   .bss:00000000 gameStatus
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:626    .text:00000314 $t
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:629    .text:00000314 setupGame
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:752    .text:000003b0 $d
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:781    .text:000003d0 playExample
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:778    .text:000003d0 $t
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:1027   .text:00000518 $d
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:1123   .rodata:00000000 shift
+/cygdrive/c/Users/embedded/AppData/Local/Temp/cca7MLQ2.s:1124   .rodata:00000000 $d
 
 UNDEFINED SYMBOLS
 __modsi3
