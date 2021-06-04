@@ -26,9 +26,9 @@
  *
  *  */
 /* Stale */
+
 tU8 board[12][18];
 tU8 activeBlock[4][2];
-
 
 tBool isInActiveBlock(tU8 x, tU8 y) {
 	int i;
@@ -146,7 +146,7 @@ void applyJoystickMovement() {
 	anyKey = checkKey();
 	if (anyKey != KEY_NOTHING) {
 	  if (anyKey == KEY_CENTER) {
-		  // nic się nie dzieje
+		// nic sie nie dzieje
 	  }else if (anyKey == KEY_LEFT && !detectCollisionLeft()) {
 		  moveActiveBlock(TRUE, FALSE, FALSE);
 	  }else if (anyKey == KEY_RIGHT && !detectCollisionRight()) {
@@ -159,28 +159,23 @@ void applyJoystickMovement() {
 	}
 }
 
-//////////////////////////////////////////////////////////////
 
-
-void generateNewActiveBlock() {
+void checkGameConditions(tBool* serafin) {
 	if (detectCollisionDown()) {
-		activeBlock[0][0] = 0;
-		activeBlock[1][0] = 0;
-		activeBlock[2][0] = 0;
-		activeBlock[3][0] = 0;
-		activeBlock[0][1] = 4;
-		activeBlock[1][1] = 3;
-		activeBlock[2][1] = 2;
-		activeBlock[3][1] = 1;
-	}
-}
-
-////////////////////////////////////////////////////////////
-
-cleanBoard() {
-	int i;
-	for (i = 0; i < 12; i++) {
-//		board[][]
+		int i;
+		for(i = 0; i < 12; i++) {
+			if(board[i][1] == 1) {
+				*serafin = FALSE;
+			}
+		}
+		activeBlock[0][0] = 5;
+		activeBlock[1][0] = 6;
+		activeBlock[2][0] = 6;
+		activeBlock[3][0] = 5;
+		activeBlock[0][1] = 1;
+		activeBlock[1][1] = 1;
+		activeBlock[2][1] = 0;
+		activeBlock[3][1] = 0;
 	}
 }
 
@@ -193,23 +188,22 @@ void playTetris () {
 			board[i][j] = 0;
 		}
 	}
-	board[4][17] = 1;
-	activeBlock[0][0] = 0;
-	activeBlock[1][0] = 0;
-	activeBlock[2][0] = 0;
-	activeBlock[3][0] = 0;
-	activeBlock[0][1] = 4;
-	activeBlock[1][1] = 3;
-	activeBlock[2][1] = 2;
-	activeBlock[3][1] = 1;
-
-	while (1) {
+	activeBlock[0][0] = 4;
+	activeBlock[1][0] = 5;
+	activeBlock[2][0] = 5;
+	activeBlock[3][0] = 4;
+	activeBlock[0][1] = 1;
+	activeBlock[1][1] = 1;
+	activeBlock[2][1] = 0;
+	activeBlock[3][1] = 0;
+	tBool serafin = TRUE;
+	while (serafin) {
 		lcdClrscr();
 		applyJoystickMovement();
-		generateNewActiveBlock();
+		checkGameConditions(&serafin);
 		moveActiveBlock(FALSE, FALSE, TRUE);
 		drawBoard();
-		delayMS(TRUE, 500);
+		delayMS(TRUE, 50);
 	}
 
 }
