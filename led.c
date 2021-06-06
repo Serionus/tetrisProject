@@ -44,19 +44,3 @@ void mainMenuLights() {
         osSleep(5);
     }
 }
-
-void switchLights(tU8 option) {
-    switch (option) {
-    case 1:
-        gameLights();
-        break;
-    case 2: 
-        gameOverLights();
-        break;
-    case 3: 
-        mainMenuLights();
-        break;
-    default:
-        break;
-    }
-}

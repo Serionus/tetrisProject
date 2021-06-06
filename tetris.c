@@ -8,9 +8,7 @@
 #include "select.h"
 #include "tetris.h"
 #include "../startup/lpc2xxx.h"
-
 #include "select.h"
-#define timer (T1TCR & 0x01)
 
 /*
  *
@@ -24,9 +22,10 @@
  * rozna czestotliwosc dzwieku 0.5
  *
  *
- *  */
-/* Stale */
+ */
 
+/* Stale */
+#define timer (T1TCR & 0x01)
 tU8 board[12][18];
 tU8 activeBlock[4][2];
 
@@ -207,10 +206,3 @@ void playTetris () {
 	}
 
 }
-
-
-
-
-
-
-

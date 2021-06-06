@@ -5,7 +5,6 @@
 
 void gameLights();
 void gameOverLights();
-void switchLights(tU8 option);
 void mainMenuLights();
 
 #endif
