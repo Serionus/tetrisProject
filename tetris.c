@@ -7,6 +7,7 @@
 #include "key.h"
 #include "select.h"
 #include "tetris.h"
+<<<<<<< HEAD
 #include "select.h"
 #include "eeprom.h"
 #include "led.h"
@@ -15,6 +16,10 @@
 #include "timer.h"
 #include "../startup/lpc2xxx.h"
 #include "../startup/config.h"
+=======
+#include "../startup/lpc2xxx.h"
+#include "select.h"
+>>>>>>> 967e9ef63f5c8e182f708bebfbb8c5c26f8ea4ec
 
 #include "../Common_Def.h"
 /*
@@ -30,9 +35,14 @@
  *
  *
  */
+<<<<<<< HEAD
 
 /* Stale */
+=======
+>>>>>>> 967e9ef63f5c8e182f708bebfbb8c5c26f8ea4ec
 
+/* Stale */
+#define timer (T1TCR & 0x01)
 tU8 board[12][18];
 tU8 activeBlock[4][2];
 
@@ -289,4 +299,8 @@ void playTetris (tBool isNewGame) {
 	gameOverMusic();
 	gameOverLights();
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 967e9ef63f5c8e182f708bebfbb8c5c26f8ea4ec
