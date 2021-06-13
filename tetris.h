@@ -7,5 +7,5 @@
 
 #ifndef TETRIS_H_
 #define TETRIS_H_
-void playTetris();
+void playTetris(tBool isNewGame);
 #endif /* TETRIS_H_ */

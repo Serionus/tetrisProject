@@ -1,13 +1,13 @@
 /*************************************************************************************
  *
  * @Description:
- * Lista sta³ych u¿ywanych do programowania 
- * Wektoryzowanego kontrolera przerwañ (VIC)
- * Wskazane jest uzupe³nienie listy
+ * Lista staï¿½ych uï¿½ywanych do programowania 
+ * Wektoryzowanego kontrolera przerwaï¿½ (VIC)
+ * Wskazane jest uzupeï¿½nienie listy
  *
- * @Authors: Micha³ Morawski, 
+ * @Authors: Michaï¿½ Morawski, 
  *           Daniel Arendt, 
- *           Przemys³aw Ignaciuk,
+ *           Przemysï¿½aw Ignaciuk,
  *           Marcin Kwapisz
  *
  * @Change log:
@@ -17,7 +17,7 @@
 #ifndef __VIC_H__
 #define __VIC_H__
 
-#include "general.h"
+#include "pre_emptive_os/api/general.h"
 
 #define WATCHDOG_IRQ_NO (0)
 #define WATCHDOG_IRQ    _BIT(WATCHDOG_IRQ_NO)
@@ -66,5 +66,5 @@
 
 typedef void (__attribute__ ((interrupt("IRQ"))) *IRQ_Handler)(void) ;
 
-// Listê sta³ych warto rozszerzyæ
+// Listï¿½ staï¿½ych warto rozszerzyï¿½
 #endif //__VIC_H__

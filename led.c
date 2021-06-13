@@ -3,60 +3,44 @@
 #include "../pre_emptive_os/api/osapi.h"
 #include "hw.h"
 
-void gameLights() {
+void gameOverLights() {
     tU8 i;
-    for (i = 0; i < 100; i++) {
+    for (i = 0; i < 10; i++) {
         setLED(1, TRUE);
-        osSleep(16);
+        osSleep(8);
         setLED(2, TRUE);
-        osSleep(16);
+        osSleep(8);
         setLED(1, FALSE);
-        osSleep(10);
-        setLed(2, FALSE);
-        osSleep(10);
+        osSleep(8);
+        setLED(2, FALSE);
+        osSleep(8);
     }
 }
 
-void gameOverLights() {
+void gameLights() {
     tU8 i;
-    for (i = 0; i < 20; i++) {
+    for (i = 0; i < 6; i++) {
         setLED(1, TRUE);
-        osSleep(10);
+        osSleep(2);
         setLED(2, TRUE);
-        osSleep(10);
+        osSleep(2);
         setLED(1, FALSE);
-        osSleep(5);
-        setLed(2, FALSE);
-        osSleep(5);
+        osSleep(1);
+        setLED(2, FALSE);
+        osSleep(1);
     }
 }
 
 void mainMenuLights() {
     tU8 i;
-    for (i = 0; i < 150; i++) {
+    for (i = 0; i < 10; i++) {
         setLED(1, TRUE);
-        osSleep(20);
+        osSleep(5);
         setLED(2, TRUE);
-        osSleep(15);
+        osSleep(10);
         setLED(1, FALSE);
-        osSleep(5);
-        setLed(2, FALSE);
-        osSleep(5);
-    }
-}
-
-void switchLights(tU8 option) {
-    switch (option) {
-    case 1:
-        gameLights();
-        break;
-    case 2: 
-        gameOverLights();
-        break;
-    case 3: 
-        mainMenuLights();
-        break;
-    default:
-        break;
+        osSleep(2);
+        setLED(2, FALSE);
+        osSleep(2);
     }
 }

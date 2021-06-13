@@ -16,9 +16,8 @@
 #include "../startup/lpc2xxx.h"
 #include "../startup/config.h"
 
-void switchMusic(tU8 option);
-void gameMusic();
-void failureSound();
+void gameOverMusic();
+void blockTouchSound();
 void mainMenuMusic();
 
 #endif

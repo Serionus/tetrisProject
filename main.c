@@ -7,7 +7,6 @@
 #include "lcd.h"
 #include "key.h"
 #include "uart.h"
-#include "exampleGame.h"
 #include "hw.h"
 #include "version.h"
 #include "configAppl.h"
@@ -88,9 +87,9 @@ initProc(void* arg)
   printf("\n*                  systemy wbudowane                    *");
   printf("\n*                                                       *");
   printf("\n*                       tworcy:                         *");
-  printf("\n*                    Michal Gebels                      *");
-  printf("\n*                 Piotr Tomczaszewski                   *");
-  printf("\n*                  Antoni Karwowsky                     *");
+  printf("\n*                    Michal Gebel                       *");
+  printf("\n*                    Piotr Tomczak                      *");
+  printf("\n*                  Antoni Karwowski                     *");
   printf("\n*********************************************************\n");
   
   osCreateProcess(proc1, proc1Stack, PROC1_STACK_SIZE, &pid1, 3, NULL, &error);

@@ -5,134 +5,43 @@
 
 void mainMenuMusic() {
 	tU16 i;
-	for(i=0; i < 100; i++) {
+	for(i=0; i < 50; i++) {
 		setBuzzer(TRUE);
-		delayMS(TRUE, 2);
+		osSleep(2);
 		setBuzzer(FALSE);
-		delayMS(TRUE, 3);
+		osSleep(2);
 	}
-	delayMS(TRUE, 30);
-	for(i = 0; i < 100; i++) {
+	osSleep(2);
+	for(i=0; i < 20; i++) {
 		setBuzzer(TRUE);
-		delayMS(TRUE, 1);
+		osSleep(2);
 		setBuzzer(FALSE);
-		delayMS(TRUE, 2);
+		osSleep(1);
 	}
-	delayMS(TRUE, 40);
-	for (i = 0; i < 100; i++) {
+	osSleep(4);
+	for(i=0; i < 40; i++) {
 		setBuzzer(TRUE);
-		delayMS(TRUE, 3);
+		osSleep(2);
 		setBuzzer(FALSE);
-		delayMS(TRUE, 1);
+		osSleep(1);
 	}
-	delayMS(TRUE, 30);
-    	for(i=0; i < 100; i++) {
-		setBuzzer(TRUE);
-		delayMS(TRUE, 2);
-		setBuzzer(FALSE);
-		delayMS(TRUE, 3);
-	}
-	delayMS(TRUE, 40);
-	for(i = 0; i < 100; i++) {
-		setBuzzer(TRUE);
-		delayMS(TRUE, 1);
-		setBuzzer(FALSE);
-		delayMS(TRUE, 2);
-	}
-	delayMS(TRUE, 40);
-	for (i = 0; i < 100; i++) {
-		setBuzzer(TRUE);
-		delayMS(TRUE, 3);
-		setBuzzer(FALSE);
-		delayMS(TRUE, 1);
-	}
-	delayMS(TRUE, 30);
+	osSleep(6);
 }
 
-void gameMusic() {
+void gameOverMusic() {
 	tU16 i;
-	for (i = 0; i < 100; i++) {
+	for (i = 0; i < 10; i++) {
 		setBuzzer(TRUE);
-		delayMS(TRUE, 3);
+		osSleep(15);
 		setBuzzer(FALSE);
-	    delayMS(TRUE, 2);
+		osSleep(1);
 	}
-	delayMS(TRUE, 20);
-	for (i = 0; i < 100; i++) {
-		setBuzzer(TRUE);
-		delayMS(TRUE, 5);
-		setBuzzer(FALSE);
-		delayMS(TRUE, 2);
-	}
-	delayMS(TRUE, 20);
-	for (i = 0; i < 100; i++) {
-		setBuzzer(TRUE);
-		delayMS(TRUE, 3);
-		setBuzzer(FALSE);
-		delayMS(TRUE, 5);
-	}
-	delayMS(TRUE, 30);
-    	for (i = 0; i < 100; i++) {
-		setBuzzer(TRUE);
-		delayMS(TRUE, 7);
-		setBuzzer(FALSE);
-	    delayMS(TRUE, 2);
-	}
-	delayMS(TRUE, 30);
-	for (i = 0; i < 100; i++) {
-		setBuzzer(TRUE);
-		delayMS(TRUE, 5);
-		setBuzzer(FALSE);
-		delayMS(TRUE, 1);
-	}
-	delayMS(TRUE, 30);
-	for (i = 0; i < 100; i++) {
-		setBuzzer(TRUE);
-		delayMS(TRUE, 2);
-		setBuzzer(FALSE);
-		delayMS(TRUE, 3);
-	}
-	delayMS(TRUE, 40);
+	osSleep(2);
 }
 
-void failureSound() {
+void blockTouchSound() {
 	setBuzzer(TRUE);
-	delayMS(TRUE, 1);
+	osSleep(15);
 	setBuzzer(FALSE);
-	delayMS(TRUE, 2);
-}
-
-void switchMusic(tU8 option) {
-	switch (option){
-	case 1:
-		mainMenuMusic();
-		break;
-	case 2: 
-		gameMusic();
-		break;
-	case 3:
-		failureSound();
-		break;
-	default:
-		break;
-	}
-}
-
-void delayMS(tBool whichTimer,tU16 delay) {
-	if(whichTimer == TRUE) {
-		T1TCR = 0x02;
-		T1PR  = 0x00;
-		T1MR0 = delay * ((CORE_FREQ)/ (1000 * PBSD));
-		T1IR  = 0xff;
-		T1MCR = 0x04;
-		T1TCR = 0x01;         
-		while (T1TCR & 0x01);
-	} else {
-		T1TCR = 0x02;
-		T1PR  = 0x00;
-		T1MR0 = delay * ((CORE_FREQ)/ (1000 * PBSD));
-		T1IR  = 0xff;
-		T1MCR = 0x04;
-		T1TCR = 0x01;
-	}
+	osSleep(2);
 }

@@ -7,11 +7,16 @@
 #include "key.h"
 #include "select.h"
 #include "tetris.h"
-#include "../startup/lpc2xxx.h"
-
 #include "select.h"
-#define timer (T1TCR & 0x01)
+#include "eeprom.h"
+#include "led.h"
+#include "music.h"
+#include "VIC.h"
+#include "timer.h"
+#include "../startup/lpc2xxx.h"
+#include "../startup/config.h"
 
+#include "../Common_Def.h"
 /*
  *
  *
@@ -24,11 +29,78 @@
  * rozna czestotliwosc dzwieku 0.5
  *
  *
- *  */
+ */
+
 /* Stale */
 
 tU8 board[12][18];
 tU8 activeBlock[4][2];
+
+void IRQ_sound(void) {
+	if (TIMER_MR0_INT & T1IR)
+    {
+		setBuzzer(TRUE);
+        T1IR   = TIMER_MR0_INT;     // Informacja dla Timera #1,
+	                                // że jego przerwanie zostało obsłużone.
+    }
+    else if (TIMER_MR1_INT & T1IR)
+    {
+		setBuzzer(FALSE);
+    	T1IR   = TIMER_MR1_INT;     // Informacja dla Timera #1,
+	                                // że jego przerwanie zostało obsłużone.
+    }
+    VICVectAddr = 0x00;             // End of Interrupt -> informacja dla
+                                    // kontrolera przerwań
+}
+
+static void init_irq(tU32 period, tU8 duty_cycle) {
+    //Zainicjuj VIC dla przerwań od Timera #1
+    VICIntSelect &= ~TIMER_1_IRQ;           //Przerwanie od Timera #1 przypisane do IRQ (nie do FIQ)
+    VICVectAddr5  = (tU32)IRQ_sound;         //adres procedury przerwania
+    VICVectCntl5  = VIC_ENABLE_SLOT | TIMER_1_IRQ_NO;
+    VICIntEnable  = TIMER_1_IRQ;            // Przypisanie i odblokowanie slotu w VIC od Timera #1
+
+    T1TCR = TIMER_RESET;                    //Zatrzymaj i zresetuj
+    T1PR  = 0;                              //Preskaler nieużywany
+    T1MR0 = ((tU64)period)*((tU64)CORE_FREQ)/1000;
+    T1MR1 = (tU64)T1MR0 * duty_cycle / 50; //Wypełnienie
+    T1IR  = TIMER_ALL_INT;                  //Resetowanie flag przerwań
+    T1MCR = MR0_I | MR1_I | MR0_R;          //Generuj okresowe przerwania dla MR0 i dodatkowo dla MR1
+    T1TCR = TIMER_RUN;                      //Uruchom timer
+}
+
+static void stop_irq() {
+	T1TCR = TIMER_RESET;
+}
+
+/************************************************
+ * Implementacja funkcji						*
+ ************************************************/
+
+/***********************************************************
+ * Funkcja odpowiedzialna za zapis gry do pamięci trwałej  *
+ * Korzystamy tutaj z eepromu 							   *
+ ***********************************************************/
+
+void saveGame() {
+	int i;
+	for(i = 0; i < 216; i+=16) {
+		eepromWrite(i, &board[i/18][i%18], sizeof(board[0][0])*16);
+		eepromPoll();
+	}
+}
+
+/***********************************************************
+ * Funkcja odpowiedzialna za
+ ***********************************************************/
+
+void loadGame() {
+	int i;
+	for(i = 0; i < 216; i+=16) {
+		eepromPageRead(i, &board[i/18][i%18], sizeof(board[0][0])*16);
+		eepromPoll();
+	}
+}
 
 tBool isInActiveBlock(tU8 x, tU8 y) {
 	int i;
@@ -76,31 +148,6 @@ tBool detectCollisionDown() {
 	return FALSE;
 }
 
-void delayMS(tBool whichTimer,tU16 delay)
-{
-	if(whichTimer == TRUE){
-		//funkcja ustawia timer i czeka na jego zakoñczenie
-		T1TCR = 0x02;          //stop and reset timer
-		T1PR  = 0x00;          //ustaw prescaler na 0
-		T1MR0 = delay * ((CORE_FREQ)/ (1000 * PBSD));
-		T1IR  = 0xff;          //ustaw flagi przerwan
-		T1MCR = 0x04;          //zatrzymaj timer po MR0
-		T1TCR = 0x01;          //start
-		//czekaj na przerwanie
-		while (T1TCR & 0x01);
-	}
-	else
-	{
-		//funkcja ustawia timer i pozwala na zastosowanie go w zewnêtrznej petli poprzez While(timer)
-		T1TCR = 0x02;
-		T1PR  = 0x00;
-		T1MR0 = delay * ((CORE_FREQ)/ (1000 * PBSD));
-		T1IR  = 0xff;
-		T1MCR = 0x04;
-		T1TCR = 0x01;
-	}
-}
-
 void drawBoard() {
 	lcdRect(24, 125, 82, 5, 53);
 	int i;
@@ -137,10 +184,6 @@ void moveActiveBlock(tBool left, tBool right, tBool down) {
 	}
 }
 
-void rotateActiveBlock() {
-
-}
-
 void applyJoystickMovement() {
 	tU8 anyKey;
 	anyKey = checkKey();
@@ -152,16 +195,16 @@ void applyJoystickMovement() {
 	  }else if (anyKey == KEY_RIGHT && !detectCollisionRight()) {
 		  moveActiveBlock(FALSE, TRUE, FALSE);
 	  }else if (anyKey == KEY_UP) {
-		  rotateActiveBlock();
+		  // nic sie nie dzieje
 	  }else if (anyKey == KEY_DOWN) {
 		  // nic się nie dzieje
 	  }
 	}
 }
 
-
-void checkGameConditions(tBool* serafin) {
+void checkActiveBlockConditions(tBool* serafin) {
 	if (detectCollisionDown()) {
+		saveGame();
 		int i;
 		for(i = 0; i < 12; i++) {
 			if(board[i][1] == 1) {
@@ -176,41 +219,74 @@ void checkGameConditions(tBool* serafin) {
 		activeBlock[1][1] = 1;
 		activeBlock[2][1] = 0;
 		activeBlock[3][1] = 0;
+		checkFullRows();
+		blockTouchSound();
+		gameLights();
 	}
 }
 
-void playTetris () {
-	lcdClrscr();
+void checkFullRows() {
 	int i;
 	int j;
-	for (i = 0; i < 12; i++) {
-		for (j = 0; j <18; j++) {
-			board[i][j] = 0;
+	for (i = 0; i < 18; i++) {
+		tU8 counter = 0;
+		for (j = 0; j < 12; j++) {
+			if(board[j][i] == 1) {
+				counter ++;
+			}
+		}
+		if (counter == 12) {
+			for (j = 0; j < 12; j++) {
+				board[j][i] = 0;
+			}
 		}
 	}
-	activeBlock[0][0] = 4;
-	activeBlock[1][0] = 5;
-	activeBlock[2][0] = 5;
-	activeBlock[3][0] = 4;
+}
+
+/*******************************************************************
+ * Funkcja odpowiedzialna za inicjalizację planszy				   *
+ * Jeżeli to jest nowa gra to nie wczytuje gry z pamięci trwałej   *
+ * @params isNewGame											   *
+ *******************************************************************/
+
+void initBoard(tBool isNewGame) {
+	if (isNewGame) {
+		int i;
+		int j;
+		for (i = 0; i < 12; i++) {
+			for (j = 0; j <18; j++) {
+				board[i][j] = 0;
+			}
+		}
+	} else {
+		loadGame();
+	}
+	activeBlock[0][0] = 5;
+	activeBlock[1][0] = 6;
+	activeBlock[2][0] = 6;
+	activeBlock[3][0] = 5;
 	activeBlock[0][1] = 1;
 	activeBlock[1][1] = 1;
 	activeBlock[2][1] = 0;
 	activeBlock[3][1] = 0;
-	tBool serafin = TRUE;
-	while (serafin) {
-		lcdClrscr();
-		applyJoystickMovement();
-		checkGameConditions(&serafin);
-		moveActiveBlock(FALSE, FALSE, TRUE);
-		drawBoard();
-		delayMS(TRUE, 50);
-	}
-
 }
 
+void playTetris (tBool isNewGame) {
+	init_irq(50, 2);
+	tBool serafin = TRUE;
+	lcdClrscr();
+	initBoard(isNewGame);
+	while (serafin) {
+		checkActiveBlockConditions(&serafin);
+		lcdClrscr();
+		applyJoystickMovement();
+		moveActiveBlock(FALSE, FALSE, TRUE);
+		drawBoard();
 
+		osSleep(10);
+	}
+	stop_irq();
+	gameOverMusic();
+	gameOverLights();
 
-
-
-
-
+}

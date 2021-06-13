@@ -75,6 +75,9 @@ typedef signed char tS8;
 typedef signed short tS16;
 typedef signed int tS32;
 typedef unsigned char tBool;
+typedef unsigned long long tU64;
+#define _BIT(n)                   (1<<(n))
+#define _PIN(port,bit)            ((IOPIN##port & _BIT(bit)) != 0)
 
 #endif
 
